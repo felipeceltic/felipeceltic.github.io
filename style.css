@@ -293,6 +293,14 @@ section .header{
     border-color: #1e40af;
 }
 
+.foot-contacts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
 footer{
     position: relative;
     display: grid;
@@ -303,6 +311,8 @@ footer{
 footer .column .logo{
     max-width: 100px;
     margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
 }
 
 footer .column p{
