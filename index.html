@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Luiz Felipe — Especialista Zendesk | CX & Automação Inteligente</title>
+  <meta name="description" content="Portfólio de Luiz Felipe — Consultor Zendesk, CX, automação e desenvolvimento web." />
+
+  <!-- Estilo inspirado visualmente na Zendesk (paleta limpa, espaços generosos, cards suaves) -->
+  <style>
+    :root{
+      /* Light theme (default) */
+      --bg:#f6fbfa;
+      --bg-2:#ffffff;
+      --card:#ffffff;
+      --text:#0f1724;
+      --accent-1:#0b6b5a; /* verde-teal escuro */
+      --accent-2:#14b8a6; /* verde-teal claro */
+      --muted:#667085;
+      --glass: rgba(11,107,90,0.06);
+      --radius:14px;
+      --max-width:1100px;
+      --container-padding:24px;
+      color-scheme: light;
+      transition: background-color 220ms ease, color 220ms ease;
+    }
+
+    /* Dark theme overrides */
+    [data-theme="dark"] {
+      --bg:#071018;
+      --bg-2:#071722;
+      --card:#0b1220;
+      --text:#e6eef3;
+      --accent-1:#35d6b0; /* teal brighter on dark */
+      --accent-2:#20bfae;
+      --muted:#9fb3bd;
+      --glass: rgba(255,255,255,0.04);
+      color-scheme: dark;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),var(--bg-2));font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:var(--text)}
+    a{color:var(--accent-1);text-decoration:none}
+
+    .page{max-width:var(--max-width);margin:36px auto;padding:var(--container-padding);}
+
+    header{display:flex;gap:18px;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent-2),var(--accent-1));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;box-shadow:0 6px 18px rgba(11,107,90,0.12)}
+    h1{margin:0;font-size:20px}
+    .title-sub{margin:0;color:var(--muted);font-size:13px}
+
+    nav{display:flex;gap:14px}
+    nav a{padding:10px 14px;border-radius:10px;font-size:14px}
+    nav a.cta{background:var(--accent-1);color:#fff}
+
+    .hero{margin-top:28px;display:grid;grid-template-columns:1fr 340px;gap:26px;align-items:start}
+
+    .card{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:0 6px 18px rgba(12,38,35,0.06);color:var(--text);border:1px solid rgba(0,0,0,0.04)}
+    /* softer shadow in dark */
+    [data-theme="dark"] .card{box-shadow:0 6px 24px rgba(2,8,14,0.6);border:1px solid rgba(255,255,255,0.04)}
+
+    .intro h2{margin:0 0 8px 0;font-size:26px}
+    .intro p{margin:0;color:var(--muted);line-height:1.6}
+
+    .contact .meta{display:flex;flex-direction:column;gap:8px}
+    .meta .row{display:flex;gap:8px;align-items:center}
+    .pill{background:var(--glass);padding:8px 10px;border-radius:999px;font-size:13px;color:var(--accent-1)}
+
+    /* Ajuste para pills do Resumo Rápido */
+    [data-theme="dark"] .pill {
+      color: var(--bg-2);
+      background: rgba(53, 214, 176, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      color: var(--text);
+    }
+
+    /* Ajuste para chips da Experiência Profissional */
+    [data-theme="dark"] .chip {
+      background: rgba(53, 214, 176, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      color: var(--text);
+    }
+
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .skill{background:linear-gradient(90deg,rgba(0,0,0,0.03),rgba(0,0,0,0.02));padding:8px 12px;border-radius:10px;font-size:13px;border:1px solid rgba(11,107,90,0.06)}
+
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:26px;margin-top:22px}
+
+    .section-title{display:flex;justify-content:space-between;align-items:center}
+    .section-title h3{margin:0}
+    .job{padding:14px;border-radius:12px;background:linear-gradient(180deg,var(--card),rgba(255,255,255,0.02));border:1px solid rgba(11,107,90,0.03);margin-top:12px}
+    .job h4{margin:0 0 6px 0}
+    .job .meta{font-size:13px;color:var(--muted)}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .chip{font-size:12px;padding:6px 8px;border-radius:8px;background:#f4f7f6;border:1px solid rgba(16,24,32,0.03)}
+
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Dark-mode-specific adjustments for small elements */
+    [data-theme="dark"] .skill{background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+    [data-theme="dark"] .pill{color:var(--bg-2);background:rgba(53,214,176,0.08)}
+
+    /* Toggle button */
+    .theme-toggle {
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:8px 10px;
+      border-radius:10px;
+      cursor:pointer;
+      border:1px solid rgba(0,0,0,0.06);
+      background:transparent;
+      font-size:14px;
+    }
+    [data-theme="dark"] .theme-toggle{border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:var(--text)}
+
+    /* small icon */
+    .icon {
+      width:18px;height:18px;display:inline-block;
+      line-height:18px;text-align:center;font-size:12px;border-radius:6px;
+      background:linear-gradient(135deg,var(--accent-2),var(--accent-1));color:#fff;font-weight:700;
+    }
+
+    /* responsivo */
+    @media (max-width:980px){
+      .hero,.grid{grid-template-columns:1fr}
+      nav{display:none}
+      .page{padding:18px}
+    }
+
+    /* smooth preference transitions */
+    * { transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease; }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <div class="brand">
+        <div class="logo">LF</div>
+        <div>
+          <h1>Luiz Felipe da Silva Araujo</h1>
+          <p class="title-sub">Especialista Zendesk • CX &amp; Automação Inteligente — Igarassu, PE</p>
+        </div>
+      </div>
+
+      <nav style="align-items:center;display:flex;gap:12px">
+        <a href="#sobre">Sobre</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#competencias">Competências</a>
+        <a class="cta" href="#contato">Contato</a>
+
+        <!-- Theme toggle -->
+        <button id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Alternar tema claro/escuro" title="Alternar tema claro/escuro">
+          <span id="themeIcon" class="icon">☀</span>
+          <span id="themeLabel" style="font-size:13px;color:var(--muted)">Light</span>
+        </button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card intro">
+        <h2>Consultor Zendesk certificado — implementação, sustentação e automação</h2>
+        <p>
+          Consultor Zendesk com experiência em suporte técnico, automação de atendimento, integração de IA e
+          customização de plataformas. Atuo traduzindo requisitos de negócio em soluções práticas e escaláveis,
+          construindo workflows, bots e relatórios com foco em eficiência e experiência do cliente.
+        </p>
+
+        <div style="margin-top:16px">
+          <div class="section-title"><h3>Resumo Rápido</h3></div>
+          <div style="display:flex;gap:14px;margin-top:10px;align-items:center">
+            <div class="chip">Zendesk: Support · Guide · Chat · Talk · Explore · Sunshine</div>
+            <div class="chip">Agent AI (Ultimate) · Automação</div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
+          <a href="mailto:felipeceltic@outlook.com" class="chip">felipeceltic@outlook.com</a>
+          <a href="https://felipeceltic.github.io" class="chip" target="_blank">felipeceltic.github.io</a>
+          <a href="https://linkedin.com/in/luizfelipew" class="chip" target="_blank">linkedin.com/in/luizfelipew</a>
+        </div>
+
+      </div>
+
+      <aside class="card contact">
+        <div class="section-title"><h3>Contato</h3></div>
+        <div class="meta" style="margin-top:10px">
+          <div class="row"><strong>Local:</strong><span style="color:var(--muted);margin-left:6px">Igarassu - PE, Brasil</span></div>
+          <div class="row"><strong>Email:</strong><a href="mailto:felipeceltic@outlook.com">felipeceltic@outlook.com</a></div>
+          <div class="row"><strong>Website:</strong><a href="https://felipeceltic.github.io" target="_blank">felipeceltic.github.io</a></div>
+          <div class="row"><strong>LinkedIn:</strong><a href="https://linkedin.com/in/luizfelipew" target="_blank">linkedin.com/in/luizfelipew</a></div>
+        </div>
+
+        <div style="margin-top:12px">
+          <div class="section-title"><h3>Competências</h3></div>
+          <div class="skills">
+            <div class="skill">Zendesk Suite</div>
+            <div class="skill">Agent AI (Ultimate)</div>
+            <div class="skill">Automação & Workflows</div>
+            <div class="skill">Sunshine Conversations</div>
+            <div class="skill">Laravel · PHP · JavaScript · React</div>
+            <div class="skill">CX & Gestão do Conhecimento</div>
+            <div class="skill">Zendesk Explore / Analytics</div>
+          </div>
+        </div>
+
+      </aside>
+    </section>
+
+    <section class="grid" id="experiencia">
+      <main>
+        <div class="card">
+          <div class="section-title"><h3>Experiência Profissional</h3></div>
+
+          <article class="job">
+            <h4>Via Consulting — Consultor Zendesk Jr II</h4>
+            <div class="meta">Nov 2024 – Atual (Sao Paulo, SP)</div>
+            <p style="margin-top:8px;color:var(--muted)">Sustentação e evolução de ambientes Zendesk enterprise; desenvolvimento de integrações e personalizações; implementação de bots, automações e relatórios customizados com foco em CX.</p>
+            <div class="chips">
+              <div class="chip">Sustentação</div>
+              <div class="chip">Integrações</div>
+              <div class="chip">Automação</div>
+            </div>
+          </article>
+
+          <article class="job">
+            <h4>Via Consulting — Consultor Jr</h4>
+            <div class="meta">Fev 2024 – Nov 2024</div>
+            <p style="margin-top:8px;color:var(--muted)">Apoio técnico em implantações Zendesk; análise de requisitos e construção de fluxos de atendimento; treinamento de equipes operacionais.</p>
+          </article>
+
+          <article class="job">
+            <h4>Clínica Idée — Desenvolvedor Full Stack</h4>
+            <div class="meta">Ago 2022 – Fev 2024 (Rio de Janeiro, RJ)</div>
+            <p style="margin-top:8px;color:var(--muted)">Desenvolvimento de sistemas internos usando Laravel, JavaScript e React; criação de interfaces intuitivas para apoio ao atendimento e gestão médica.</p>
+          </article>
+
+          <article class="job">
+            <h4>Atacado da Construção Home Center — Técnico de TI</h4>
+            <div class="meta">Out 2014 – Fev 2024 (Recife, PE)</div>
+            <p style="margin-top:8px;color:var(--muted)">Manutenção e suporte técnico; implementação de rotinas de backup, segurança e atendimento remoto.</p>
+          </article>
+
+        </div>
+
+        <div class="card" style="margin-top:16px" id="competencias">
+          <div class="section-title"><h3>Certificações & Formação</h3></div>
+          <ul style="margin-top:10px;color:var(--muted);line-height:1.7">
+            <li>Zendesk Talk para Agentes</li>
+            <li>Zendesk Messaging para Agentes</li>
+            <li>Zendesk Explore / Analytics</li>
+            <li>Zendesk Partner Sales Expert</li>
+            <li>Sunshine Conversations for Developers</li>
+            <li>Certificação Agent AI (Ultimate)</li>
+          </ul>
+
+          <div style="margin-top:12px">
+            <strong>Formação</strong>
+            <div style="color:var(--muted);margin-top:6px">
+              <div>Adm &amp; Tec – Tecnólogo em Desenvolvimento de Software (Jun 2022 – Dez 2022)</div>
+              <div>Escola SENAI de Informática – Gestão de Redes e Segurança de Sistemas (2017 – 2019)</div>
+              <div>Conexão Cursos – Técnico em Montagem e Manutenção de Computadores (2012 – 2014)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px" id="sobre">
+          <div class="section-title"><h3>Sobre / Resumo Profissional</h3></div>
+          <p style="color:var(--muted);margin-top:10px;line-height:1.6">Consultor Zendesk certificado, com sólida experiência em suporte técnico, automação de atendimento e integração de inteligência artificial em fluxos de suporte. Atuo em projetos de implementação, customização e sustentação de plataformas Zendesk, com foco em eficiência, estratégia de CX e experiência do usuário. Tenho facilidade em traduzir necessidades de negócio em soluções práticas e escaláveis.</p>
+        </div>
+
+      </main>
+
+      <aside>
+        <div class="card" id="contato">
+          <div class="section-title"><h3>Projetos & Entregáveis</h3></div>
+          <p style="color:var(--muted);margin-top:10px">Exemplos de entregáveis: fluxos de atendimento, automações e macros, relatórios personalizados no Explore, apps simples para Zendesk, integração com Sunshine e bots com Agent AI.</p>
+
+          <div style="margin-top:12px">
+            <strong>Ferramentas</strong>
+            <div style="color:var(--muted);margin-top:8px">Zendesk Platform, Agent AI, Sunshine Conversations, Laravel, React, JavaScript, SQL, Git</div>
+          </div>
+
+          <div style="margin-top:14px">
+            <strong>Quer conversar?</strong>
+            <p style="color:var(--muted);margin-top:8px">Envie um email para <a href="mailto:felipeceltic@outlook.com">felipeceltic@outlook.com</a> ou conecte-se no LinkedIn.</p>
+            <a href="mailto:felipeceltic@outlook.com" style="display:inline-block;margin-top:8px;padding:10px 12px;border-radius:10px;background:var(--accent-2);color:#fff">Enviar email</a>
+            <a href="https://linkedin.com/in/luizfelipew" target="_blank" style="display:inline-block;margin-top:8px;padding:10px 12px;border-radius:10px;background:var(--accent-2);color:#fff">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h4 style="margin:0">Disponibilidade</h4>
+          <p style="color:var(--muted);margin-top:8px">Abertura para projetos como consultoria, sustentação e implementações de Zendesk. Experiência com clientes enterprise e times operacionais.</p>
+        </div>
+
+      </aside>
+    </section>
+
+    <footer>
+      <div>Feito por <strong>Luiz Felipe da Silva Araujo</strong>. <span style="display:block;margin-top:6px">Baseado nas informações do currículo enviado.</span></div>
+    </footer>
+
+  </div>
+
+  <script>
+    (function(){
+      const root = document.documentElement;
+      const toggle = document.getElementById('themeToggle');
+      const icon = document.getElementById('themeIcon');
+      const label = document.getElementById('themeLabel');
+
+      // detect saved preference or system preference
+      const saved = localStorage.getItem('luiz_portfolio_theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      let theme = saved || (prefersDark ? 'dark' : 'light');
+
+      function applyTheme(t) {
+        if (t === 'dark') {
+          root.setAttribute('data-theme', 'dark');
+          icon.textContent = '🌙';
+          label.textContent = 'Dark';
+          toggle.setAttribute('aria-pressed', 'true');
+        } else {
+          root.removeAttribute('data-theme');
+          icon.textContent = '☀';
+          label.textContent = 'Light';
+          toggle.setAttribute('aria-pressed', 'false');
+        }
+      }
+
+      // initialize
+      applyTheme(theme);
+
+      // toggle handler
+      toggle.addEventListener('click', function(){
+        theme = (root.getAttribute('data-theme') === 'dark') ? 'light' : 'dark';
+        applyTheme(theme);
+        localStorage.setItem('luiz_portfolio_theme', theme);
+      });
+
+      // allow keyboard toggle (Enter / Space) for accessibility
+      toggle.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle.click();
+        }
+      });
+
+      // respond to OS-level changes if no explicit saved preference
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('luiz_portfolio_theme')) {
+          applyTheme(e.matches ? 'dark' : 'light');
+        }
+      });
+
+    })();
+  </script>
+</body>
+</html>
